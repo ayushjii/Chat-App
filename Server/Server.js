@@ -1,24 +1,23 @@
+const http = require("http")
 const express = require("express")
 const cors =  require("cors")
-const mongoose = require("mongoose")
+const socketIO = require("socket.io")
 
 const app = express();
-require("dotenv").config();
+const port = 4500 || process.env.PORT ;
 
-app.use(cors());
-app.use(express.json());
-
-mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-} )
-.then(()=> {
-    console.log("DB CONNECTION SUCCESS");
+app.get("/", (req,res)=>{
+    res.send("working")
 })
-// .catch((err)=> {
-//     console.log(err.message)
-// })
 
-const server = app.listen(process.env.PORT,()=> {
-    console.log(`Server Started on ${process.env.PORT}`);
+const server = http.createServer(app);
+
+const io = socketIO(server);
+
+io.on("connection",()=>{
+    console.log("NEW CONNECTION")
+} )
+
+server.listen(port,() => {
+    console.log(`Server is running on ${port}`);
 })
