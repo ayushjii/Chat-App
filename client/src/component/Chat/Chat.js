@@ -7,16 +7,32 @@ const ENDPOINT = "http://localhost:4500/";
 
 const Chat = () => {
     
+  
+  useEffect(() => {
     const socket = socketIO(ENDPOINT , { transports: ['websocket']} );
-
-    useEffect(() => {
-        socket.on('connect', () => {
-            alert("connected");
+    socket.on('connect', () => {
+            // alert("connected");
         })
-        return () => {
+   console.log(socket)
+        socket.emit('joined', {user})
 
+        socket.on('welcome',(data)=>{
+          console.log(data.user, data.message)
+        } )
+ 
+        socket.on('userJoined', (data)=>{
+          console.log(data.user, data.message);
+        })
+
+        socket.on('leave', (data)=>{
+          console.log(data.user, data.message)
+        })
+
+        return () => {
+        socket.emit(`disconnect`)
+        socket.off();
         }
-    }, [socket])
+    }, [])
 
   return (
     <div className="chatPage">
@@ -25,7 +41,7 @@ const Chat = () => {
         <div className="chatBox"></div>
         <div className="inputBox">
           <input type="text" id="chatInput" />
-          <button className="sendbtn">{<IoSendSharp size={35} />}</button>
+          <button className="sendbtn">{<IoSendSharp size={35}  className="icon"/>}</button>
         </div>
         {user}
       </div>

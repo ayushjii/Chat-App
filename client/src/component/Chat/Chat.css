@@ -48,7 +48,14 @@
      width: 22%;
      transition: all 0.3s;
      cursor: pointer;
-}
-.sendbtn:hover{
-    background-color: rgb(106, 32, 175) ;
+    }
+    .sendbtn:hover{
+        background-color: rgb(106, 32, 175) ;
+    }
+.icon{
+        transition: all 0.3s;
+    }
+.icon:hover {
+    transform: translateX(15px);
+
 }
