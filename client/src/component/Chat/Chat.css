@@ -1,79 +1,78 @@
-.chatPage{
-    background-color: rgb(31, 29, 29);
-    width: 100vw;
-    height: 100vw;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.chatPage {
+  background-color: rgb(31, 29, 29);
+  width: 100vw;
+  height: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.chatContainer{
-    background-color: #fff;
-    height: 60%;
-    width: 50%;
+.chatContainer {
+  background-color: #fff;
+  height: 60%;
+  width: 50%;
 }
 
-.header>h1{
-    color:#fff;
-    margin: 10px;
+.header > h1 {
+  color: #fff;
+  margin: 10px;
 }
 
-.closebtn{
- margin: 10px;
- transition: all 0.3s;
- cursor: pointer;
+.closebtn {
+  margin: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
-.closebtn:hover{
-    transform: scale(1.2);
+.closebtn:hover {
+  transform: scale(1.2);
 }
 
-.header{
-    background-color: blueviolet;
-    height: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header {
+  background-color: blueviolet;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.chatBox{
-    height: 70%; 
-    box-sizing: border-box;
+.chatBox {
+  height: 70%;
+  box-sizing: border-box;
 }
 
-.inputBox{
-    border-top:2px solid #000;
-    height: 15%;
-    box-sizing: border-box;
-    display: flex;
+.inputBox {
+  height: 15%;
+  box-sizing: border-box;
+  display: flex;
 }
 
-#chatInput{
-    width: 80%;
-    border: none;
-    padding:2vmax ;
-    box-sizing: border-box;
-    outline:none;
-    background-color: #fff ;
-    font-size: 2vmax;
+#chatInput {
+  border-top: 2px solid #000;
+  width: 80%;
+  border: none;
+  padding: 2vmax;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #e9e9e9;
+  font-size: 2vmax;
 }
 
-.sendbtn{
-    background-color: blueviolet ;
-    color: #fff;
-     border:none;
-     width: 22%;
-     transition: all 0.3s;
-     cursor: pointer;
-    }
-    .sendbtn:hover{
-        background-color: rgb(106, 32, 175) ;
-    }
-.icon{
-        transition: all 0.3s;
-    }
+.sendbtn {
+  background-color: blueviolet;
+  color: #fff;
+  border: none;
+  width: 22%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.sendbtn:hover {
+  background-color: rgb(106, 32, 175);
+}
+.icon {
+  transition: all 0.3s;
+}
 .icon:hover {
-    transform: translateX(15px);
-
+  transform: translateX(15px);
 }
